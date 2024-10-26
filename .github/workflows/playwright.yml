@@ -10,5 +10,7 @@ jobs:
               uses: actions/checkout@v2
             - name: Install Dependencies
               run: npm install
-            - name: Run Playwright Tests
+            - name: Install Playwright
               run: npx playwright install
+            - name: Run Playwright tests
+              run: npm test
