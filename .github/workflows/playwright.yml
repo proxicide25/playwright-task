@@ -8,9 +8,7 @@ jobs:
         steps:
             - name: Checkout Repository
               uses: actions/checkout@v2
-            - name: Run Tests
-              run: |
-                |  echo "Install dependencies"
-                |  npm ci
-                |  echo "Run Playwright Tests"
-                |  npm run test:ci
+            - name: Install Dependencies
+              run: npm ci
+            - name: Run Playwright Tests
+              run: npm run test:ci
