@@ -5,8 +5,14 @@ on:
 jobs:
     playwrighttests:
         runs-on: windows-latest
+        container:
+            image: mcr.microsoft.com/playwright:v1.48.1-focal
         steps:
             - name: Checkout Repository
               uses: actions/checkout@v2
-            - name: Say hello
-              run: echo Hello
+            - name: Run Tests
+              run: |
+                |  echo "Install dependencies"
+                |  npm ci
+                |  echo "Run Playwright Tests"
+                |  npm run test:ci
