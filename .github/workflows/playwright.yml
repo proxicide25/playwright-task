@@ -1,0 +1,12 @@
+name: Playwright Tasks
+on:
+    push:
+        branches: [ main ]
+jobs:
+    playwrighttests:
+        runs-on: windows-latest
+        steps:
+            - name: Checkout Repository
+              uses: actions/checkout@v2
+            - name: Say hello
+              run: echo Hello
